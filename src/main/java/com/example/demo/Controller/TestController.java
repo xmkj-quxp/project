@@ -9,18 +9,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TestController {
 
+
     @GetMapping
-    @RequestMapping("/Index")
+    @RequestMapping("/")
     public ModelAndView toIndex() {
         ModelAndView pageMV = new ModelAndView();
-        pageMV.setViewName("Index1");
+        pageMV.setViewName("login");
         return pageMV;
     }
 
-    @GetMapping
-    @RequestMapping("/indexStr")
-    public String toIndexStr() {
-        return "Index";
-    }
 
 }

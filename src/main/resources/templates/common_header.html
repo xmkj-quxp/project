@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<!--头部-->
+<div class="layui-header" th:fragment="top_header">
+    <div class="top-cont">
+        <div style="font-size: 24px;line-height: 40px;display:inline-block;verticle-align:middle;">&nbsp;</div>
+        <ul class="layui-nav layui-layout-right">
+            <!--<li class="layui-nav-item">-->
+                <!--<a>-->
+                    <!--用户名：XXX-->
+                <!--</a>-->
+            <!--</li>-->
+
+            <li class="layui-nav-item">
+                <a href="javascript:void(0);" onclick="logoutCheckLogin();" class="blue_btn">退出</a>
+            </li>
+
+        </ul>
+
+    </div>
+    <script type="text/javascript">
+        /*
+         * 判断用户是否登录
+         */
+        function logoutCheckLogin() {
+            commonGoToPageFunc("/logout");
+            // AJAX 参数
+            // var options = {
+            //     url: '/logout',
+            //     type:"post",
+            //     dataType:"json",
+            //     success:function(data){
+            //
+            //         // 如果 响应提示操作成功
+            //         if (data[Constant.RETURN_STATUS_KEY] === Constant.RETURN_STATUS_VALUE_SUCCESS) {
+            //             logoutFunc();
+            //             // 如果 响应提示操作成功
+            //         }else if (data[Constant.RETURN_STATUS_KEY] === Constant.RETURN_STATUS_VALUE_FAILURE) {
+            //             // 提示错误消息
+            //             commonShowErrorMessageFunc(data[Constant.RETURN_MESSAGE_KEY],function () {
+            //                 // 此处为 异常消息提示框 关闭的回调
+            //             });
+            //
+            //         }
+            //     },
+            //     error:function(data){
+            //         // 通用Ajax 错误 处理
+            //         commonAjaxErrorHandlerFunc(data);
+            //     }
+            // };
+            // commonAjaxFormSubmitWithoutFormSelectorFunc(options);
+
+        }
+
+        function logoutFunc() {
+            commonShowConMessageFunc("确认要退出吗？",function(){
+                commonGoToPageFunc("/logout");
+            });
+        }
+    </script>
+    <style>
+        .pwd_modify_div .layui-layer-title{
+            border-bottom: none;
+        }
+        i.has_message {
+            display: block;
+            background: #f00;
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            top: 12px;
+            right: 11px;
+            position: absolute;
+        }
+        .blue_btn {
+            color: #54A5FF!important;
+        }
+    </style>
+</div>
+</html>

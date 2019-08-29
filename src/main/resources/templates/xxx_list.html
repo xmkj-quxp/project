@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{include_css::common_header}">
+    <title>教学平台</title>
+</head>
+
+<link rel="stylesheet" th:href="@{/manage/css/course_list.css}"/>
+
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <!-- 头部-->
+    <div th:replace="~{commonHeader::top_header}"></div>
+
+    <!-- 左侧导航-->
+    <div th:replace="~{commonLeftBar::left_bar('courseMenu')}"></div>
+
+    <!--内容区域-->
+    <div class="layui-body" >
+
+        <div class="layui-tab">
+
+            <button class="layui-btn newCreateOrder" id="createBtn">
+                <i class="layui-icon">&#xe654;</i> 新建
+            </button>
+
+            <div class="layui-tab-content content">
+                <div class="layui-tab-item layui-show">
+                    <div class="layui-tab secondLevelTab">
+
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item mainContainer layui-show">
+                                <!--输入框组部分-->
+                                <form class="layui-form" method="post">
+
+
+                                    <!-- 删除条件：课程id隐藏项 -->
+                                    <input type="hidden"
+                                           id="courseid"
+                                           name="courseid" />
+
+
+                                    <!-- 检索条件：课程名隐藏项 -->
+                                    <input type="hidden"
+                                           id="condTitle"
+                                           name="condTitle"
+                                           th:value="${dataVO.condTitle}" />
+
+
+
+                                    <!---->
+                                    <div class="layui-input-inline">
+                                        <label class="layui-form-label">课程名称</label>
+                                        <input type="text"
+                                               name="title"
+                                               th:value="${dataVO.title}"
+                                               maxlength="100"
+                                               id="title"
+                                               autocomplete="off"
+                                               placeholder="请输入课程名"
+                                               class="layui-input input-lg">
+                                    </div>
+
+                                    <button type="button" id="searchBtn" class="layui-btn layui-btn-normal searchBtn">
+                                        <i class="layui-icon">&#xe615;</i>
+                                        搜索
+                                    </button>
+
+                                    <!--表格数据信息-->
+                                    <div class="tableData">
+                                        <table id="dataTable" lay-skin="line" class="list-table layui-table small_padding">
+                                            <!--控制每一列的宽度-->
+                                            <colgroup>
+                                                <col width="15%">
+                                                <col width="20%">
+                                                <col width="15%">
+                                                <col width="15%">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>课程名</th>
+                                                    <th>介绍</th>
+                                                    <th>创建时间</th>
+                                                    <th class="centerAlign">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div th:replace="~{commonPager::common_page}"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 引入共通js -->
+<div th:replace="~{include_js::common_footer}"></div>
+<!-- 引入独立js -->
+<script th:src="@{/manage/js/xxx_list.js}" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

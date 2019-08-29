@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- 分页js -->
+<div th:fragment="common_page">
+<div id="page" class="page" ></div>
+<script type="text/javascript">
+    // 结果集、回调函数、配置(limits = 自定义分页)
+    function renderPagerFunc(paramPageResultList,paramSubmitFunc,option) {
+        var limits = [12, 24, 36];
+        // 尝试读取分页集合数据
+        if(option != undefined && option.limits != undefined){
+            limits = option.limits;
+        }
+
+        var pageSizeObj = $('#pageSize');
+        var pageNumberObj = $('#pageNumber');
+        layui.laypage.render({
+            // 分页包裹层元素id
+            elem: 'page'
+            //总数据条数
+            , count: paramPageResultList[Constant.PAGEED_DATA_KEY][Constant.DATA_COUNT_KEY]
+            // 单页最大数据条数
+            , limit: pageSizeObj.val()
+            // 单页最大数据条数选项
+            , limits: limits
+            // 当前页码
+            , curr: pageNumberObj.val()
+            //连续显示分页数
+            , groups: 5
+            // 分页控件元素: 数据总数、上一页、页码选择、下一页、单页数据条数、页码跳转
+            , layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+            // 分页提交函数
+            , jump: function (obj, first) {
+                if (!first) {
+
+                    // 屏蔽掉 pageSize / pageNumber 未变动时的提交
+                    if (pageSizeObj.val() != obj.limit || pageNumberObj.val() != obj.curr) {
+
+                        pageSizeObj.val(obj.limit);
+                        pageNumberObj.val(obj.curr);
+
+                        paramSubmitFunc();
+                    }
+                }
+            }
+        });
+    }
+</script>
+<input type="hidden" id="pageNumber" name="pageNumber" th:value="${conditionVO.pageNumber}"/>
+<input type="hidden" id="pageSize" name="pageSize" th:value="${conditionVO.pageSize}"/>
+
+</div>
+</html>

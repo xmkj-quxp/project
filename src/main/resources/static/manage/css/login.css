@@ -1,0 +1,172 @@
+@charset "UTF-8";
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #e4eaed;
+    background-image: url(/common/images/body-bg.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+.container{
+    max-width: 1401px;
+    max-height: 703px;
+    min-width: 1111px;
+    min-height: 576px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 73%;
+    height: 75%;
+    margin: auto;
+    background-color: white;
+    /* background-image: url(./img/car.png);
+    background-repeat: no-repeat;
+    background-size: 55% auto;
+    background-position: center center; */
+    box-shadow: 0px 0px 40px 0px rgba(173,173,173,.75);
+}
+.form-comtainer{
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-image: url(/common/images/segmentation.png);
+    background-repeat: no-repeat;
+    background-size: 13% 100%;
+}
+form{
+    /* max-width: 491px;
+    max-height: 502px; */
+    width: 422px;
+    height: 492px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 0px 40px 0px rgba(132,132,132,.3);
+}
+button{
+    height: 10%;
+    width: 74%;
+    line-height: 10%;
+    padding: 0;
+    border: none;
+    display: inline-block;
+    background-image: url(/common/images/btn-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+    background-position: 0 0;
+    position: absolute;
+    font-size: 19px;
+    color: white;
+    left: 0;
+    right: 0;
+    bottom: 14%;
+    margin: auto;
+    cursor: pointer;
+}
+button:hover{
+    background-position: 0 100%;
+}
+input{
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    padding: 0;
+    border: none;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 62px;
+    font-size: 18px;
+    /*color: #cccccc;*/
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(114,142,160,.3);
+}
+input[type=text]::-ms-clear{
+    display: none;
+}
+input:focus{
+    color: #333333;
+}
+input::-webkit-input-placeholder{
+    color: #cbcbcb;
+}
+.name,.password{
+    width: 74%;
+    height: 11%;
+    text-align: center;
+}
+.name{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    margin: auto;
+}
+.name img,.password img{
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.password{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 34%;
+    margin: auto;
+}
+img.car{
+    width: 47%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 4%;
+    margin: auto;
+}
+img.bg2{
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1000;
+}
+img.form-head{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 40px 0 rgba(173,173,173,.3);
+}
+img.form-logo{
+    width: 35%;
+    height: auto;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1000;
+}

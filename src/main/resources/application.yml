@@ -1,2 +1,6 @@
 server:
   port: 80
+spring:
+  mvc:
+    favicon:
+      enabled: false

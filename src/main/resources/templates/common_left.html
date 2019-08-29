@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--左导航-->
+<div class="layui-side layui-bg-black" th:fragment="left_bar(actionMenuName)">
+	<div class="layui-side-scroll">
+		<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+		<ul class="layui-nav layui-nav-tree">
+			<li class="layui-nav-item " th:classappend="${actionMenuName == 'orderMenu'} ? 'layui-this' : 'nothing' ">
+			<a href="javascript:void(0);" onclick="commonGoToPageFunc('/order/toOrderList')" class="menu_one">订单管理</a>
+			</li>
+
+
+			<li class="layui-nav-item " th:classappend="${actionMenuName == 'materialMenu'} ? 'layui-this' : 'nothing' ">
+				<a href="javascript:void(0);" onclick="commonGoToPageFunc('/material/toMaterialList')" class="menu_one">素材管理</a>
+			</li>
+
+			<li class="layui-nav-item " th:classappend="${actionMenuName == 'courseMenu'} ? 'layui-this' : 'nothing' ">
+				<a href="javascript:void(0);" onclick="commonGoToPageFunc('/course/toCourseList')" class="menu_one">课程管理</a>
+			</li>
+
+			<li class="layui-nav-item " th:classappend="${actionMenuName == 'subjectMenu'} ? 'layui-this' : 'nothing' ">
+				<a href="javascript:void(0);" onclick="commonGoToPageFunc('/subject/toSubjectList')" class="menu_one">主题管理</a>
+			</li>
+
+			<li class="layui-nav-item " th:classappend="${actionMenuName == 'taskMenu'} ? 'layui-this' : 'nothing' ">
+				<a href="javascript:void(0);" onclick="commonGoToPageFunc('/task/toTaskList')" class="menu_one">任务管理</a>
+			</li>
+
+			<li class="layui-nav-item " th:classappend="${actionMenuName == 'userMenu'} ? 'layui-this' : 'nothing' ">
+				<a href="javascript:void(0);" onclick="commonGoToPageFunc('/user/toUserList')" class="menu_one">用户管理</a>
+			</li>
+        </ul>
+    </div>
+</div>
+</html>
