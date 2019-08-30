@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="~{include_css::common_css">
-    <title>教学平台</title>
+<head th:replace="~{include_css::common_css(~{::title},~{::link})}">
+    <title></title>
+    <link rel="stylesheet" href="manage/css/xxx_list.css"/>
 </head>
 
-<link rel="stylesheet" th:href="@{/manage/css/course_list.css}"/>
 
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -97,6 +97,6 @@
 <!-- 引入共通js -->
 <div th:replace="~{include_js::common_js}"></div>
 <!-- 引入独立js -->
-<script th:src="@{/manage/js/xxx_list.js}" type="text/javascript" charset="utf-8"></script>
+<script src="manage/js/xxx_list.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

@@ -1,13 +1,14 @@
 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <head th:fragment="common_css">
+    <head th:fragment="common_css(title,links)">
+        <base th:href="@{/}">
         <meta charset="UTF-8">
-        <!--<title th:replace="${title}">QQQ</title>-->
-        <link rel="stylesheet" th:href="@{/plugins/layUI/css/layui.css}"/>
-        <link rel="stylesheet" th:href="@{/plugins/layUI/css/xui-tree.css}"/>
-        <link rel="stylesheet" th:href="@{/common/css/common.css}"/>
-        <!--<th:block th:replace="${links}" />-->
+        <title th:replace="${title}">DEMO</title>
+        <link rel="stylesheet" href="plugins/layUI/css/layui.css"/>
+        <link rel="stylesheet" href="plugins/layUI/css/xui-tree.css"/>
+        <link rel="stylesheet" href="common/css/common.css"/>
+        <th:block th:replace="${links}" />
 
     </head>
     <body>

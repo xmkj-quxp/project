@@ -43,7 +43,7 @@ layui.use(['element', 'layer'], function () {
                 // 如果 响应提示操作成功
                 if (data[Constant.RETURN_STATUS_KEY] === Constant.RETURN_STATUS_VALUE_SUCCESS) {
                     // 重定向 跳转路径
-                    commonGoToPageFunc("/order/toOrderList");
+                    commonGoToPageFunc("/xxx/toXXXList");
                     // 如果 响应提示操作成功
                 } else if (data[Constant.RETURN_STATUS_KEY] === Constant.RETURN_STATUS_VALUE_FAILURE) {
                     // 提示错误消息

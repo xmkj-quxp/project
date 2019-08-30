@@ -1,24 +1,25 @@
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{include_css::common_css}">
+<head th:replace="~{include_css::common_css(~{::title},~{::link})}">
     <title></title>
+    <link href="manage/css/login.css" type="text/css" rel="stylesheet">
 </head>
-<link th:href="@{/manage/css/login.css}" type="text/css" rel="stylesheet">
+
 
 <body>
-<img class="bg2" th:src="@{/common/images/bg2.png}">
+<img class="bg2" src="common/images/bg2.png">
 <div class="container">
-    <img class="car" th:src="@{/common/images/car.png}" alt="">
+    <img class="car" src="common/images/car.png" alt="">
     <div class="form-comtainer">
         <form action="">
-            <img class="form-logo" th:src="@{/common/images/form-logo.png}">
+            <img class="form-logo" src="common/images/form-logo.png">
             <div class="name">
-                <img th:src="@{/common/images/name.png}" alt="">
+                <img src="common/images/name.png" alt="">
                 <input type="text" name="username" xui-bubble="username" xui-verify="required" placeholder="请输入账号"/>
             </div>
             <div class="password">
-                <img th:src="@{/common/images/password.png}" alt="">
+                <img src="common/images/password.png" alt="">
                 <input type="password" name="password" xui-bubble="password" xui-verify="required" placeholder="请输入密码"/>
             </div>
             <button type="button" class="loginBtn">登录</button>
@@ -28,6 +29,6 @@
 <!-- 引入共通js -->
 <div th:replace="~{include_js::common_js}"></div>
 <!-- 引入独立js -->
-<script th:src="@{/manage/js/login.js}" type="text/javascript" charset="utf-8"></script>
+<script src="manage/js/login.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

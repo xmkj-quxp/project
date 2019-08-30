@@ -6,10 +6,8 @@ var xui = new Xui({
     }
 });
 
-layui.use(['element','form', 'layer','upload'], function() {
+layui.use(['element','form', 'layer'], function() {
 
-    // 上传文件
-    var upload = layui.upload;
 
     // 提交插入
     $('#submitBtn').on("click",function () {
@@ -53,22 +51,6 @@ layui.use(['element','form', 'layer','upload'], function() {
         commonGoToPageFunc("/course/toCourseList")
     });
 
-    // 车辆图片上传
-    upload.render({
-        elem:'#picPathBtn',
-        // accept:'images',
-        exts: 'jpg|png|bmp|jpeg|pdf',
-        auto:false,
-        multiple:false,
-        size:1024*1024*5,
-        // choose: commonFileChooseCallBack
-        choose:function(obj){
-            obj.preview(function(index, file, result){
 
-                $('#picImg').attr('src', result); //图片链接（base64）
-                $('#picurl').val('ok');
-            });
-        }
-    });
 
 });

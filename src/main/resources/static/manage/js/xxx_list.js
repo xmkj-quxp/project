@@ -18,6 +18,7 @@ layui.use(['element', 'form', 'layer', 'laypage'], function () {
 
         commonGoToPageFunc("/course/toEditCourse?courseid="+tmpCourseId);
 
+        // TODO
         // commonSubmitGoToPageFunc("toEditCourse");
 
     });
