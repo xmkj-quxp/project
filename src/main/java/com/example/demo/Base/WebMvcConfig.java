@@ -11,13 +11,19 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class WebConfig implements WebMvcConfigurer {
+public class WebMvcConfig implements WebMvcConfigurer {
 
     @Resource
     private WebHandlerInterceptorAdapter webHandlerInterceptorAdapter;
 
     // 需排除拦截的地址
-    private final List<String> EXCLUDE_PATH_LIST = Arrays.asList("/","/favicon.ico");
+    private final List<String> EXCLUDE_PATH_LIST = Arrays.asList(
+            "/"
+            ,"/favicon.ico"
+            ,"/plugins/**"
+            ,"/common/**"
+            ,"/manage/**"
+    );
 
     @Override
     public void configurePathMatch(PathMatchConfigurer configurer){

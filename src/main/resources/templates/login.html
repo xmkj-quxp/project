@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{include_css::common_header}">
+<head th:replace="~{include_css::common_css}">
     <title></title>
 </head>
 <link th:href="@{/manage/css/login.css}" type="text/css" rel="stylesheet">
@@ -26,7 +26,7 @@
     </div>
 </div>
 <!-- 引入共通js -->
-<div th:replace="~{include_js::common_footer}"></div>
+<div th:replace="~{include_js::common_js}"></div>
 <!-- 引入独立js -->
 <script th:src="@{/manage/js/login.js}" type="text/javascript" charset="utf-8"></script>
 </body>

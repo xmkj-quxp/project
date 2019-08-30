@@ -1,18 +1,18 @@
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{include_css::common_header}">
+<head th:replace="~{include_css::common_css}">
     <title>教学平台</title>
 </head>
-<link rel="stylesheet" th:href="@{/manage/css/course_edit.css}"/>
+<link rel="stylesheet" th:href="@{/manage/css/xxx_edit.css}"/>
 
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <!-- 头部-->
-    <div th:replace="~{commonHeader::top_header}"></div>
+    <div th:replace="~{common_header::top_header}"></div>
 
     <!-- 左侧导航-->
-    <div th:replace="~{commonLeftBar::left_bar('courseMenu')}"></div>
+    <div th:replace="~{common_left::left_bar('xxxMenu')}"></div>
     
     <!--内容区域-->
     <div class="layui-body" >
@@ -30,7 +30,7 @@
                     <div class="card">
                         <!--卡头-->
                         <div class="card-title">
-                            <b>课程信息</b>
+                            <b>信息</b>
                         </div>
                         <!--卡体-->
                         <div class="card-body form-card">
@@ -38,57 +38,19 @@
 
                             <!--课程名称-->
                             <div class="layui-form-item short-form-item">
-                                <label class="layui-form-label"><sup>*</sup>课程名称:</label>
+                                <label class="layui-form-label"><sup>*</sup>名称:</label>
                                 <div class="layui-input-inline">
                                     <input type="text"
                                            name="title"
                                            xui-bubble="title"
                                            xui-verify="required | byte(80)"
-                                           placeholder="请输入课程名称"
+                                           placeholder="请输入名称"
                                            th:value="${dataVO.title}"
                                            class="layui-input">
                                 </div>
                             </div>
 
-                            <!--课程介绍-->
-                            <div class="layui-form-item short-form-item">
-                                <label class="layui-form-label"><sup>*</sup>课程介绍</label>
-                                <div class="layui-input-inline">
-                                    <input type="text"
-                                           name="introduce"
-                                           xui-bubble="introduce"
-                                           xui-verify="required | byte(80)"
-                                           placeholder="请输入课程介绍"
-                                           th:value="${dataVO.introduce}"
-                                           class="layui-input">
-                                </div>
-                            </div>
 
-                            <!--车辆照片-->
-                            <div class="layui-form-item short-form-item">
-                                <label class="layui-form-label"><sup>*</sup>图片：</label>
-                                <div class="layui-input-inline">
-                                    <!--上传文件按钮-->
-                                    <button type="button"
-                                            id="picPathBtn"
-                                            class="layui-btn upload-pic-btn"
-                                            xui-bubble="picurl">
-                                        图片上传
-                                    </button>
-
-                                    <input type="file" class="layui-upload-file" name="file" th:value="${dataVO.picurl}"/>
-                                    <!-- 隐藏项 base64-->
-                                    <input type="hidden" id="picurl" name="picurl" th:value="${dataVO.picurl}" class="upload-file-content"
-                                                                             xui-verify="required"/>
-                                    <div class="layui-form-mid layui-word-aux">推荐尺寸（宽250，高300）</div>
-                                </div>
-                                <!--文件展示-->
-                                <div class="layui-input-inline pic-show-div">
-                                    <div class="box">
-                                        <img th:src="${dataVO.picurl}" alt="" class="imageSize" id="picImg"/>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
@@ -109,7 +71,7 @@
     </div>
 </div>
 <!-- 引入共通js -->
-<div th:replace="~{include_js::common_footer}"></div>
+<div th:replace="~{include_js::common_js}"></div>
 <!-- 引入独立js -->
 <script th:src="@{/manage/js/xxx_edit.js}" type="text/javascript" charset="utf-8"></script>
 </body>
