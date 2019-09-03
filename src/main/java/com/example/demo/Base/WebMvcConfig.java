@@ -1,5 +1,6 @@
 package com.example.demo.Base;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -10,7 +11,7 @@ import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+@Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Resource
