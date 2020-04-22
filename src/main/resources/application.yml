@@ -1,6 +1,47 @@
 server:
   port: 80
 spring:
+  thymeleaf:
+    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    mode: HTML5
+    #编码 可不用配置
+    encoding: UTF-8
+    #开发配置为false,避免修改模板还要重启服务器
+    cache: false
+    #配置模板路径，默认是templates，可以不用配置
+    prefix: classpath:/templates/
+
+  servlet:
+    multipart:
+      maxFileSize: -1
+      maxRequestSize: -1
+
   mvc:
     favicon:
-      enabled: false
+      enabled: true
+    servlet:
+      path: /
+    view:
+      #prefix:
+      suffix: .html
+    access-interceptor:
+      login-expire-seconds: 7200
+    static-path-pattern: /**
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${file.request.rootpath}
+    messages:
+      basename: messages
+      encoding: utf-8
+    http:
+      encoding:
+        charset: UTF-8
+        enabled: true
+        force: true
+
+xdja:
+  upload:
+    file:
+#      path: D:\test\file
+      path: /home/etl/test/file
+#      temp: D:\test\temp
+      temp: /home/etl/test/temp
