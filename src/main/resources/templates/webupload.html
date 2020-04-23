@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>隔离交换系统解密</title>
+    <title>文件上传</title>
     <link rel="stylesheet" type="text/css" href="/themes/bootstrap.min.css"/>
     <link rel="stylesheet" href="/themes/webuploader.css">
     <script type="text/javascript" src="/script/jquery.min.js"></script>
@@ -52,10 +52,6 @@
         <span id="useTime">0</span>s
     </p>
 
-    <div class="btns">
-        <div class="picker">另一个选择文件</div>
-        <button name="ctlBtn" class="btn btn-default">另一个开始上传</button>
-    </div>
 </div>
 
 
@@ -145,6 +141,7 @@
         }
         clearInterval(timer);
         $('#' + file.id).find('p.state').text('已上传');
+        alert(file.source.ruid)
         $.get("/merge", {"guid": successDuid,"name":file.name}, function (data, status) {
             layer.msg("合并完成");
         });

@@ -41,7 +41,7 @@ spring:
 xdja:
   upload:
     file:
-#      path: D:\test\file
-      path: /home/etl/test/file
-#      temp: D:\test\temp
-      temp: /home/etl/test/temp
+      path: D:\test\file
+#      path: /home/etl/test/file
+      temp: D:\test\temp
+#      temp: /home/etl/test/temp

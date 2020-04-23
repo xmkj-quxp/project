@@ -51,6 +51,11 @@ public class IndexController {
         return "webupload";
     }
 
+    @GetMapping("/xxx")
+    public String xxx() {
+        return "xxx";
+    }
+
     @GetMapping("downloaderror")
     public String downloaderror() {
         return "error";
